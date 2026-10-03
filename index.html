@@ -1,406 +1,465 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Razaullah Fan's | Cricket</title>
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            background: #070b09;
-            color: white;
-        }
-
-        /* TOP HEADER */
-        .header {
-            background: #0b1510;
-            border-bottom: 1px solid #1d3d2b;
-        }
-
-        .header-inner {
-            max-width: 1200px;
-            margin: auto;
-            padding: 18px 20px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .brand {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .brand-logo {
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            background: #16a05a;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 25px;
-        }
-
-        .brand h1 {
-            font-size: 22px;
-        }
-
-        .brand h1 span {
-            color: #20c878;
-        }
-
-        .tagline {
-            color: #8fa198;
-            font-size: 12px;
-        }
-
-        /* NAVIGATION */
-        .navigation {
-            background: #101a14;
-            border-bottom: 1px solid #1d3d2b;
-            overflow-x: auto;
-        }
-
-        .nav-inner {
-            max-width: 1200px;
-            margin: auto;
-            display: flex;
-        }
-
-        .nav-inner a {
-            color: #d8dfda;
-            text-decoration: none;
-            padding: 16px 17px;
-            font-size: 14px;
-            white-space: nowrap;
-        }
-
-        .nav-inner a:hover,
-        .nav-inner a.active {
-            background: #16a05a;
-            color: white;
-        }
-
-        /* HERO */
-        .hero {
-            background:
-                linear-gradient(90deg, #050806, rgba(5, 30, 18, .85)),
-                radial-gradient(circle at right, #176b3c, #07100b 65%);
-
-            min-height: 390px;
-            display: flex;
-            align-items: center;
-        }
-
-        .hero-inner {
-            max-width: 1200px;
-            width: 100%;
-            margin: auto;
-            padding: 70px 20px;
-        }
-
-        .hero small {
-            color: #20c878;
-            font-weight: bold;
-            letter-spacing: 2px;
-        }
-
-        .hero h2 {
-            font-size: 50px;
-            max-width: 700px;
-            margin: 14px 0;
-        }
-
-        .hero h2 span {
-            color: #20c878;
-        }
-
-        .hero p {
-            max-width: 620px;
-            color: #b8c4bd;
-            font-size: 17px;
-            line-height: 1.7;
-        }
-
-        .buttons {
-            margin-top: 25px;
-        }
-
-        .button {
-            display: inline-block;
-            text-decoration: none;
-            padding: 13px 22px;
-            border-radius: 6px;
-            margin-right: 8px;
-            font-weight: bold;
-        }
-
-        .green-button {
-            background: #16a05a;
-            color: white;
-        }
-
-        .dark-button {
-            background: #101a14;
-            color: white;
-            border: 1px solid #2a4c38;
-        }
-
-        /* GENERAL */
-        .container {
-            max-width: 1200px;
-            margin: auto;
-            padding: 40px 20px;
-        }
-
-        .title {
-            font-size: 25px;
-            margin-bottom: 22px;
-            border-left: 4px solid #16a05a;
-            padding-left: 12px;
-        }
-
-        /* LIVE MATCHES */
-        .match-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 18px;
-        }
-
-        .match-card {
-            background: #101713;
-            border: 1px solid #1d3829;
-            border-radius: 10px;
-            padding: 20px;
-        }
-
-        .live {
-            color: #ff5252;
-            font-weight: bold;
-            font-size: 13px;
-            margin-bottom: 18px;
-        }
-
-        .team {
-            display: flex;
-            justify-content: space-between;
-            padding: 10px 0;
-            border-bottom: 1px solid #1c2b22;
-        }
-
-        .score {
-            color: #20c878;
-            font-weight: bold;
-        }
-
-        .match-status {
-            color: #89978f;
-            font-size: 13px;
-            margin-top: 15px;
-        }
-
-        /* NEWS */
-        .news-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 18px;
-        }
-
-        .news-card {
-            background: #101713;
-            border: 1px solid #1d3829;
-            border-radius: 10px;
-            overflow: hidden;
-        }
-
-        .news-photo {
-            height: 160px;
-            background: linear-gradient(135deg, #145b35, #07100b);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 55px;
-        }
-
-        .news-content {
-            padding: 18px;
-        }
-
-        .news-content h3 {
-            margin-bottom: 10px;
-            font-size: 18px;
-        }
-
-        .news-content p {
-            color: #9aa69f;
-            font-size: 14px;
-            line-height: 1.6;
-        }
-
-        /* LISTS */
-        .list-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-
-        .list-card {
-            background: #101713;
-            border: 1px solid #1d3829;
-            border-radius: 10px;
-            overflow: hidden;
-        }
-
-        .list-row {
-            padding: 17px;
-            border-bottom: 1px solid #1d2a22;
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .list-row:last-child {
-            border-bottom: none;
-        }
-
-        .green-text {
-            color: #20c878;
-        }
-
-        /* TEAMS */
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 15px;
-        }
-
-        .team-box {
-            background: #101713;
-            border: 1px solid #1d3829;
-            border-radius: 10px;
-            padding: 25px 15px;
-            text-align: center;
-        }
-
-        .team-box .flag {
-            font-size: 40px;
-            margin-bottom: 12px;
-        }
-
-        .team-box p {
-            color: #89978f;
-            font-size: 13px;
-            margin-top: 6px;
-        }
-
-        /* VIDEO */
-        .video-box {
-            background: #101713;
-            border: 1px solid #1d3829;
-            border-radius: 10px;
-            padding: 25px;
-            text-align: center;
-        }
-
-        .play {
-            width: 70px;
-            height: 70px;
-            background: #16a05a;
-            border-radius: 50%;
-            margin: auto;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 28px;
-        }
-
-        .video-box h3 {
-            margin-top: 15px;
-        }
-
-        .video-box p {
-            color: #89978f;
-            margin-top: 8px;
-        }
-
-        /* FOOTER */
-        footer {
-            background: #040705;
-            border-top: 1px solid #1d3d2b;
-            margin-top: 30px;
-        }
-
-        .footer-inner {
-            max-width: 1200px;
-            margin: auto;
-            padding: 35px 20px;
-            text-align: center;
-        }
-
-        .footer-inner h2 {
-            margin-bottom: 10px;
-        }
-
-        .footer-inner span {
-            color: #20c878;
-        }
-
-        .footer-inner p {
-            color: #78857d;
-            margin-top: 10px;
-        }
-
-        /* MOBILE */
-        @media (max-width: 800px) {
-
-            .hero h2 {
-                font-size: 35px;
-            }
-
-            .match-grid,
-            .news-grid,
-            .list-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .team-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .tagline {
-                display: none;
-            }
-        }
-
-        @media (max-width: 500px) {
-
-            .brand h1 {
-                font-size: 18px;
-            }
-
-            .hero {
-                min-height: 330px;
-            }
-
-            .hero-inner {
-                padding: 50px 20px;
-            }
-
-            .team-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Razaullah Fan's | Cricket</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#07110d;
+    color:#fff;
+    line-height:1.6;
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+.container{
+    width:92%;
+    max-width:1200px;
+    margin:auto;
+}
+
+/* HEADER */
+
+.header{
+    background:#050806;
+    border-bottom:1px solid #16452d;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.header-inner{
+    width:92%;
+    max-width:1200px;
+    margin:auto;
+    min-height:75px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+}
+
+.brand{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.brand-logo{
+    width:48px;
+    height:48px;
+    border-radius:50%;
+    background:#0b6b3a;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:25px;
+    border:2px solid #22a861;
+}
+
+.brand h1{
+    font-size:22px;
+    line-height:1.1;
+}
+
+.brand h1 span{
+    color:#20b866;
+}
+
+.tagline{
+    color:#8fa99a;
+    font-size:11px;
+}
+
+/* NAVIGATION */
+
+.nav{
+    display:flex;
+    align-items:center;
+    gap:4px;
+    flex-wrap:wrap;
+}
+
+.nav a{
+    padding:9px 11px;
+    color:#c8d5ce;
+    font-size:13px;
+    border-radius:6px;
+    transition:.2s;
+}
+
+.nav a:hover{
+    background:#0d5530;
+    color:#fff;
+}
+
+/* HERO */
+
+.hero{
+    background:
+    linear-gradient(90deg,rgba(2,10,6,.95),rgba(3,35,20,.72)),
+    radial-gradient(circle at right,#0d7742,transparent 45%);
+    border-bottom:1px solid #16452d;
+}
+
+.hero-inner{
+    min-height:360px;
+    display:flex;
+    align-items:center;
+    padding:60px 0;
+}
+
+.hero-content{
+    max-width:720px;
+}
+
+.badge{
+    display:inline-block;
+    background:#0c6338;
+    color:#baf3d2;
+    border:1px solid #1d9d5c;
+    padding:6px 12px;
+    border-radius:30px;
+    font-size:12px;
+    margin-bottom:18px;
+}
+
+.hero h2{
+    font-size:48px;
+    line-height:1.08;
+    margin-bottom:18px;
+}
+
+.hero h2 span{
+    color:#21c46b;
+}
+
+.hero p{
+    color:#b5c7bd;
+    max-width:650px;
+    font-size:16px;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:12px;
+    margin-top:25px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    padding:12px 20px;
+    border-radius:7px;
+    font-weight:bold;
+    font-size:14px;
+}
+
+.btn-primary{
+    background:#0d7c45;
+}
+
+.btn-primary:hover{
+    background:#109653;
+}
+
+.btn-secondary{
+    border:1px solid #286b49;
+    background:#0b1711;
+}
+
+/* SECTION */
+
+section{
+    padding:55px 0;
+}
+
+.section-head{
+    display:flex;
+    align-items:end;
+    justify-content:space-between;
+    margin-bottom:22px;
+    gap:20px;
+}
+
+.section-head h2{
+    font-size:26px;
+}
+
+.section-head p{
+    color:#7f9789;
+    font-size:13px;
+}
+
+.section-line{
+    width:55px;
+    height:3px;
+    background:#20b866;
+    margin-top:7px;
+}
+
+/* CARDS */
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:16px;
+}
+
+.card{
+    background:#0b1711;
+    border:1px solid #183b29;
+    border-radius:10px;
+    padding:20px;
+    transition:.2s;
+}
+
+.card:hover{
+    border-color:#229858;
+    transform:translateY(-2px);
+}
+
+.card small{
+    color:#6f8c7c;
+}
+
+.card h3{
+    margin:7px 0;
+    font-size:17px;
+}
+
+.card p{
+    color:#9db0a5;
+    font-size:13px;
+}
+
+/* SCORE */
+
+.score-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:16px;
+}
+
+.score-card{
+    background:#0b1711;
+    border:1px solid #1c4931;
+    border-radius:10px;
+    overflow:hidden;
+}
+
+.score-top{
+    padding:11px 15px;
+    background:#0e2518;
+    display:flex;
+    justify-content:space-between;
+    color:#91aa9c;
+    font-size:12px;
+}
+
+.live{
+    color:#35d77b;
+    font-weight:bold;
+}
+
+.score-body{
+    padding:18px;
+}
+
+.team{
+    display:flex;
+    justify-content:space-between;
+    margin:9px 0;
+    font-weight:bold;
+}
+
+.team span:last-child{
+    color:#bcebcf;
+}
+
+.result{
+    border-top:1px solid #183a28;
+    margin-top:14px;
+    padding-top:12px;
+    color:#20bd67;
+    font-size:12px;
+}
+
+/* TABLE */
+
+.table-wrap{
+    overflow-x:auto;
+    background:#0b1711;
+    border:1px solid #183b29;
+    border-radius:10px;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    min-width:600px;
+}
+
+th,td{
+    padding:14px 16px;
+    text-align:left;
+    border-bottom:1px solid #173626;
+    font-size:13px;
+}
+
+th{
+    background:#0e2518;
+    color:#8fd5aa;
+}
+
+td{
+    color:#c3d0c8;
+}
+
+tr:last-child td{
+    border-bottom:0;
+}
+
+/* TEAMS */
+
+.team-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:14px;
+}
+
+.team-card{
+    background:#0b1711;
+    border:1px solid #183b29;
+    border-radius:10px;
+    padding:22px;
+    text-align:center;
+}
+
+.team-icon{
+    width:65px;
+    height:65px;
+    margin:auto;
+    border-radius:50%;
+    background:#0d5130;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:28px;
+    margin-bottom:12px;
+}
+
+/* VIDEO */
+
+.video-card{
+    min-height:180px;
+    display:flex;
+    flex-direction:column;
+    justify-content:end;
+    background:
+    linear-gradient(180deg,transparent,#07110d),
+    #10251a;
+}
+
+.play{
+    font-size:34px;
+    margin-bottom:8px;
+}
+
+/* FOOTER */
+
+.footer{
+    background:#040806;
+    border-top:1px solid #173c29;
+    padding:35px 0;
+    margin-top:20px;
+}
+
+.footer-inner{
+    display:flex;
+    justify-content:space-between;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.footer p{
+    color:#738b7d;
+    font-size:13px;
+}
+
+.footer strong{
+    color:#20b866;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:950px){
+
+    .header-inner{
+        flex-direction:column;
+        padding:15px 0;
+    }
+
+    .nav{
+        justify-content:center;
+    }
+
+    .grid,
+    .score-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .team-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .hero h2{
+        font-size:38px;
+    }
+}
+
+@media(max-width:600px){
+
+    .grid,
+    .score-grid,
+    .team-grid{
+        grid-template-columns:1fr;
+    }
+
+    .hero-inner{
+        padding:45px 0;
+    }
+
+    .hero h2{
+        font-size:32px;
+    }
+
+    .nav a{
+        font-size:12px;
+        padding:7px 8px;
+    }
+
+    section{
+        padding:40px 0;
+    }
+}
+</style>
 </head>
 
 <body>
@@ -409,16 +468,594 @@
 
 <header class="header">
 
-    <div class="header-inner">
+<div class="header-inner">
 
-        <div class="brand">
+<a href="#" class="brand">
 
-            <div class="brand-logo">
-                🏏
-            </div>
+<div class="brand-logo">🏏</div>
 
-            <div>
-                <h1>Razaullah <span>Fan's</span></h1>
-                <div class="tagline">
-                    Your Cricket Community
-                </div
+<div>
+<h1>Razaullah <span>Fan's</span></h1>
+<div class="tagline">Your Cricket Community</div>
+</div>
+
+</a>
+
+<nav class="nav">
+
+<a href="#scores">Live Scores</a>
+<a href="#schedule">Schedule</a>
+<a href="#archives">Archives</a>
+<a href="#news">News</a>
+<a href="#series">Series</a>
+<a href="#teams">Teams</a>
+<a href="#videos">Videos</a>
+<a href="#rankings">Rankings</a>
+<a href="#more">More</a>
+
+</nav>
+
+</div>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="container hero-inner">
+
+<div class="hero-content">
+
+<div class="badge">🏏 RAZAULLAH FAN'S CRICKET</div>
+
+<h2>
+Everything Cricket.<br>
+<span>One Place.</span>
+</h2>
+
+<p>
+Latest cricket news, live scores, upcoming matches,
+series, teams, rankings, videos and much more.
+Welcome to the Razaullah Fan's cricket community.
+</p>
+
+<div class="hero-buttons">
+
+<a class="btn btn-primary" href="#scores">
+View Live Scores
+</a>
+
+<a class="btn btn-secondary" href="#news">
+Latest News
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- LIVE SCORES -->
+
+<section id="scores">
+
+<div class="container">
+
+<div class="section-head">
+
+<div>
+<h2>Live Scores</h2>
+<div class="section-line"></div>
+</div>
+
+<p>Latest match updates</p>
+
+</div>
+
+<div class="score-grid">
+
+<div class="score-card">
+
+<div class="score-top">
+<span>PAK vs IND</span>
+<span class="live">● LIVE</span>
+</div>
+
+<div class="score-body">
+
+<div class="team">
+<span>🇵🇰 Pakistan</span>
+<span>156/6</span>
+</div>
+
+<div class="team">
+<span>🇮🇳 India</span>
+<span>148/8</span>
+</div>
+
+<div class="result">
+Pakistan need 0 runs to win
+</div>
+
+</div>
+
+</div>
+
+
+<div class="score-card">
+
+<div class="score-top">
+<span>ENG vs AUS</span>
+<span class="live">● LIVE</span>
+</div>
+
+<div class="score-body">
+
+<div class="team">
+<span>🏴 England</span>
+<span>187/4</span>
+</div>
+
+<div class="team">
+<span>🇦🇺 Australia</span>
+<span>181/7</span>
+</div>
+
+<div class="result">
+England won by 6 runs
+</div>
+
+</div>
+
+</div>
+
+
+<div class="score-card">
+
+<div class="score-top">
+<span>SA vs NZ</span>
+<span>● COMPLETED</span>
+</div>
+
+<div class="score-body">
+
+<div class="team">
+<span>🇿🇦 South Africa</span>
+<span>201/7</span>
+</div>
+
+<div class="team">
+<span>🇳🇿 New Zealand</span>
+<span>190/9</span>
+</div>
+
+<div class="result">
+South Africa won by 11 runs
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- SCHEDULE -->
+
+<section id="schedule">
+
+<div class="container">
+
+<div class="section-head">
+
+<div>
+<h2>Schedule</h2>
+<div class="section-line"></div>
+</div>
+
+<p>Upcoming matches</p>
+
+</div>
+
+<div class="grid">
+
+<div class="card">
+<small>03 OCT 2026 • 7:30 PM</small>
+<h3>🇵🇰 Pakistan vs 🇮🇳 India</h3>
+<p>International T20 • Final</p>
+</div>
+
+<div class="card">
+<small>04 OCT 2026 • 6:00 PM</small>
+<h3>🇦🇺 Australia vs 🏴 England</h3>
+<p>International T20</p>
+</div>
+
+<div class="card">
+<small>05 OCT 2026 • 8:00 PM</small>
+<h3>🇿🇦 South Africa vs 🇳🇿 New Zealand</h3>
+<p>International T20</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- NEWS -->
+
+<section id="news">
+
+<div class="container">
+
+<div class="section-head">
+
+<div>
+<h2>Latest Cricket News</h2>
+<div class="section-line"></div>
+</div>
+
+<p>Stay updated</p>
+
+</div>
+
+<div class="grid">
+
+<div class="card">
+<small>CRICKET NEWS</small>
+<h3>Pakistan prepare for another big cricket battle</h3>
+<p>Get the latest updates, team news and match developments.</p>
+</div>
+
+<div class="card">
+<small>PAKISTAN CRICKET</small>
+<h3>Pakistan squad continues preparations</h3>
+<p>Players are working hard ahead of the upcoming matches.</p>
+</div>
+
+<div class="card">
+<small>WORLD CRICKET</small>
+<h3>International cricket action continues</h3>
+<p>Follow major cricket events from around the world.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- SERIES -->
+
+<section id="series">
+
+<div class="container">
+
+<div class="section-head">
+
+<div>
+<h2>Series</h2>
+<div class="section-line"></div>
+</div>
+
+<p>Explore cricket series</p>
+
+</div>
+
+<div class="grid">
+
+<div class="card">
+<small>2026</small>
+<h3>Pakistan vs India Series</h3>
+<p>Matches • Results • News</p>
+</div>
+
+<div class="card">
+<small>2026</small>
+<h3>Asia Cricket Championship</h3>
+<p>Teams • Schedule • Results</p>
+</div>
+
+<div class="card">
+<small>2026</small>
+<h3>International T20 Series</h3>
+<p>Fixtures • Squads • Updates</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- TEAMS -->
+
+<section id="teams">
+
+<div class="container">
+
+<div class="section-head">
+
+<div>
+<h2>Teams</h2>
+<div class="section-line"></div>
+</div>
+
+<p>International teams</p>
+
+</div>
+
+<div class="team-grid">
+
+<div class="team-card">
+<div class="team-icon">🇵🇰</div>
+<h3>Pakistan</h3>
+<p>Pakistan Cricket Team</p>
+</div>
+
+<div class="team-card">
+<div class="team-icon">🇮🇳</div>
+<h3>India</h3>
+<p>India Cricket Team</p>
+</div>
+
+<div class="team-card">
+<div class="team-icon">🇦🇺</div>
+<h3>Australia</h3>
+<p>Australia Cricket Team</p>
+</div>
+
+<div class="team-card">
+<div class="team-icon">🏴</div>
+<h3>England</h3>
+<p>England Cricket Team</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- VIDEOS -->
+
+<section id="videos">
+
+<div class="container">
+
+<div class="section-head">
+
+<div>
+<h2>Cricket Videos</h2>
+<div class="section-line"></div>
+</div>
+
+<p>Watch latest videos</p>
+
+</div>
+
+<div class="grid">
+
+<div class="card video-card">
+<div class="play">▶</div>
+<small>HIGHLIGHTS</small>
+<h3>Pakistan Match Highlights</h3>
+</div>
+
+<div class="card video-card">
+<div class="play">▶</div>
+<small>TOP MOMENTS</small>
+<h3>Best Cricket Moments</h3>
+</div>
+
+<div class="card video-card">
+<div class="play">▶</div>
+<small>INTERVIEWS</small>
+<h3>Cricket Interviews</h3>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- RANKINGS -->
+
+<section id="rankings">
+
+<div class="container">
+
+<div class="section-head">
+
+<div>
+<h2>ICC Rankings</h2>
+<div class="section-line"></div>
+</div>
+
+<p>Demo rankings</p>
+
+</div>
+
+<div class="table-wrap">
+
+<table>
+
+<thead>
+
+<tr>
+<th>Rank</th>
+<th>Team</th>
+<th>Matches</th>
+<th>Points</th>
+<th>Rating</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+<td>1</td>
+<td>🇮🇳 India</td>
+<td>32</td>
+<td>4120</td>
+<td>129</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>🇦🇺 Australia</td>
+<td>30</td>
+<td>3760</td>
+<td>125</td>
+</tr>
+
+<tr>
+<td>3</td>
+<td>🇵🇰 Pakistan</td>
+<td>29</td>
+<td>3520</td>
+<td>121</td>
+</tr>
+
+<tr>
+<td>4</td>
+<td>🏴 England</td>
+<td>31</td>
+<td>3650</td>
+<td>118</td>
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ARCHIVES -->
+
+<section id="archives">
+
+<div class="container">
+
+<div class="section-head">
+
+<div>
+<h2>Archives</h2>
+<div class="section-line"></div>
+</div>
+
+<p>Past cricket matches</p>
+
+</div>
+
+<div class="grid">
+
+<div class="card">
+<small>2026</small>
+<h3>September Cricket Matches</h3>
+<p>Results and match information.</p>
+</div>
+
+<div class="card">
+<small>2026</small>
+<h3>August Cricket Matches</h3>
+<p>Previous series and results.</p>
+</div>
+
+<div class="card">
+<small>2026</small>
+<h3>July Cricket Matches</h3>
+<p>Explore previous cricket action.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- MORE -->
+
+<section id="more">
+
+<div class="container">
+
+<div class="section-head">
+
+<div>
+<h2>More Cricket</h2>
+<div class="section-line"></div>
+</div>
+
+<p>More from Razaullah Fan's</p>
+
+</div>
+
+<div class="grid">
+
+<div class="card">
+<h3>🇵🇰 Pakistan Cricket</h3>
+<p>Latest Pakistan cricket updates and stories.</p>
+</div>
+
+<div class="card">
+<h3>📸 Gallery</h3>
+<p>Cricket photos and memorable moments.</p>
+</div>
+
+<div class="card">
+<h3>📊 Stats</h3>
+<p>Player and team statistics.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+<div class="container footer-inner">
+
+<div>
+<strong>Razaullah Fan's</strong>
+<p>Your Cricket Community</p>
+</div>
+
+<div>
+<p>© 2026 Razaullah Fan's. All Rights Reserved.</p>
+</div>
+
+</div>
+
+</footer>
+
+</body>
+</html>
