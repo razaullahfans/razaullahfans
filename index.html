@@ -18,15 +18,15 @@ html{
 }
 
 body{
-    font-family:Arial, Helvetica, sans-serif;
-    background:#07110d;
+    font-family:Arial,Helvetica,sans-serif;
+    background:#06100b;
     color:#fff;
     line-height:1.6;
 }
 
 a{
-    color:inherit;
     text-decoration:none;
+    color:inherit;
 }
 
 .container{
@@ -35,156 +35,180 @@ a{
     margin:auto;
 }
 
-/* HEADER */
+/* ================= HEADER ================= */
 
 .header{
-    background:#050806;
-    border-bottom:1px solid #16452d;
     position:sticky;
     top:0;
-    z-index:1000;
+    z-index:999;
+    background:rgba(4,10,7,.97);
+    border-bottom:1px solid #16462d;
+    backdrop-filter:blur(10px);
 }
 
 .header-inner{
-    width:92%;
-    max-width:1200px;
-    margin:auto;
-    min-height:75px;
+    min-height:76px;
     display:flex;
     align-items:center;
     justify-content:space-between;
-    gap:20px;
+    gap:25px;
 }
 
 .brand{
     display:flex;
     align-items:center;
     gap:12px;
+    flex-shrink:0;
 }
 
 .brand-logo{
     width:48px;
     height:48px;
-    border-radius:50%;
-    background:#0b6b3a;
     display:flex;
     align-items:center;
     justify-content:center;
+    background:#08783f;
+    border:2px solid #20b866;
+    border-radius:50%;
     font-size:25px;
-    border:2px solid #22a861;
+    box-shadow:0 0 20px rgba(20,180,95,.15);
 }
 
 .brand h1{
-    font-size:22px;
+    font-size:20px;
     line-height:1.1;
 }
 
 .brand h1 span{
-    color:#20b866;
+    color:#21bd68;
 }
 
 .tagline{
-    color:#8fa99a;
-    font-size:11px;
+    color:#82998d;
+    font-size:10px;
+    margin-top:3px;
 }
-
-/* NAVIGATION */
 
 .nav{
     display:flex;
     align-items:center;
-    gap:4px;
-    flex-wrap:wrap;
+    gap:2px;
 }
 
 .nav a{
-    padding:9px 11px;
-    color:#c8d5ce;
-    font-size:13px;
+    color:#bac9c0;
+    font-size:12px;
+    padding:9px 10px;
     border-radius:6px;
     transition:.2s;
 }
 
 .nav a:hover{
-    background:#0d5530;
+    background:#0d5130;
     color:#fff;
 }
 
-/* HERO */
+/* ================= BREAKING ================= */
 
-.hero{
-    background:
-    linear-gradient(90deg,rgba(2,10,6,.95),rgba(3,35,20,.72)),
-    radial-gradient(circle at right,#0d7742,transparent 45%);
-    border-bottom:1px solid #16452d;
-}
-
-.hero-inner{
-    min-height:360px;
+.breaking-bar{
+    background:#091a11;
+    border-bottom:1px solid #173f29;
     display:flex;
     align-items:center;
-    padding:60px 0;
+    min-height:42px;
+}
+
+.breaking-label{
+    background:#0d8248;
+    padding:10px 17px;
+    font-size:11px;
+    font-weight:bold;
+    white-space:nowrap;
+}
+
+.breaking-text{
+    padding:0 17px;
+    color:#b7c9bf;
+    font-size:12px;
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    min-height:430px;
+    display:flex;
+    align-items:center;
+    background:
+    radial-gradient(circle at 85% 45%,rgba(16,129,69,.30),transparent 35%),
+    linear-gradient(110deg,#040b07 0%,#06170e 55%,#0a2718 100%);
+    border-bottom:1px solid #16462d;
 }
 
 .hero-content{
-    max-width:720px;
+    max-width:760px;
+    padding:70px 0;
 }
 
-.badge{
+.hero-badge{
     display:inline-block;
-    background:#0c6338;
-    color:#baf3d2;
-    border:1px solid #1d9d5c;
     padding:6px 12px;
+    border:1px solid #218653;
     border-radius:30px;
-    font-size:12px;
+    color:#8ee3b2;
+    background:#092016;
+    font-size:11px;
+    font-weight:bold;
     margin-bottom:18px;
 }
 
 .hero h2{
-    font-size:48px;
-    line-height:1.08;
+    font-size:52px;
+    line-height:1.05;
     margin-bottom:18px;
+    letter-spacing:-1px;
 }
 
 .hero h2 span{
-    color:#21c46b;
+    color:#20c66b;
 }
 
 .hero p{
-    color:#b5c7bd;
     max-width:650px;
-    font-size:16px;
+    color:#a9bbb1;
+    font-size:15px;
 }
 
 .hero-buttons{
     display:flex;
     gap:12px;
     margin-top:25px;
-    flex-wrap:wrap;
 }
 
 .btn{
-    padding:12px 20px;
+    display:inline-block;
+    padding:12px 19px;
     border-radius:7px;
+    font-size:13px;
     font-weight:bold;
-    font-size:14px;
 }
 
 .btn-primary{
-    background:#0d7c45;
+    background:#0c8248;
 }
 
 .btn-primary:hover{
-    background:#109653;
+    background:#0fa457;
 }
 
 .btn-secondary{
-    border:1px solid #286b49;
-    background:#0b1711;
+    background:#0a1710;
+    border:1px solid #24573b;
 }
 
-/* SECTION */
+/* ================= SECTIONS ================= */
 
 section{
     padding:55px 0;
@@ -194,8 +218,8 @@ section{
     display:flex;
     align-items:end;
     justify-content:space-between;
-    margin-bottom:22px;
     gap:20px;
+    margin-bottom:23px;
 }
 
 .section-head h2{
@@ -203,53 +227,18 @@ section{
 }
 
 .section-head p{
-    color:#7f9789;
-    font-size:13px;
+    color:#71897b;
+    font-size:12px;
 }
 
 .section-line{
-    width:55px;
+    width:50px;
     height:3px;
-    background:#20b866;
+    background:#20bd68;
     margin-top:7px;
 }
 
-/* CARDS */
-
-.grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:16px;
-}
-
-.card{
-    background:#0b1711;
-    border:1px solid #183b29;
-    border-radius:10px;
-    padding:20px;
-    transition:.2s;
-}
-
-.card:hover{
-    border-color:#229858;
-    transform:translateY(-2px);
-}
-
-.card small{
-    color:#6f8c7c;
-}
-
-.card h3{
-    margin:7px 0;
-    font-size:17px;
-}
-
-.card p{
-    color:#9db0a5;
-    font-size:13px;
-}
-
-/* SCORE */
+/* ================= LIVE SCORES ================= */
 
 .score-grid{
     display:grid;
@@ -258,23 +247,29 @@ section{
 }
 
 .score-card{
-    background:#0b1711;
-    border:1px solid #1c4931;
+    background:#0a1710;
+    border:1px solid #19472f;
     border-radius:10px;
     overflow:hidden;
+    transition:.2s;
 }
 
-.score-top{
+.score-card:hover{
+    border-color:#20a65e;
+    transform:translateY(-3px);
+}
+
+.score-head{
+    background:#0d2418;
     padding:11px 15px;
-    background:#0e2518;
     display:flex;
     justify-content:space-between;
-    color:#91aa9c;
-    font-size:12px;
+    color:#91a79b;
+    font-size:11px;
 }
 
 .live{
-    color:#35d77b;
+    color:#39df7c;
     font-weight:bold;
 }
 
@@ -285,110 +280,209 @@ section{
 .team{
     display:flex;
     justify-content:space-between;
-    margin:9px 0;
+    align-items:center;
+    margin:10px 0;
+    font-size:14px;
     font-weight:bold;
 }
 
-.team span:last-child{
-    color:#bcebcf;
+.score{
+    color:#d5f2df;
+    font-size:17px;
 }
 
-.result{
-    border-top:1px solid #183a28;
+.score-result{
     margin-top:14px;
     padding-top:12px;
-    color:#20bd67;
+    border-top:1px solid #193a28;
+    color:#22bd68;
+    font-size:11px;
+}
+
+/* ================= NEWS ================= */
+
+.news-grid{
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr;
+    gap:16px;
+}
+
+.news-card{
+    min-height:230px;
+    padding:22px;
+    border:1px solid #19472f;
+    border-radius:10px;
+    background:
+    linear-gradient(180deg,rgba(8,35,21,.2),#09150e),
+    #0b1811;
+    display:flex;
+    flex-direction:column;
+    justify-content:end;
+    transition:.2s;
+}
+
+.news-card:hover{
+    transform:translateY(-3px);
+    border-color:#22a960;
+}
+
+.news-card:first-child{
+    min-height:280px;
+}
+
+.news-tag{
+    color:#36d87c;
+    font-size:10px;
+    font-weight:bold;
+    margin-bottom:8px;
+}
+
+.news-card h3{
+    font-size:18px;
+    line-height:1.3;
+}
+
+.news-card p{
+    color:#91a69a;
+    font-size:12px;
+    margin-top:7px;
+}
+
+/* ================= GENERAL CARDS ================= */
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:16px;
+}
+
+.card{
+    background:#0a1710;
+    border:1px solid #19472f;
+    border-radius:10px;
+    padding:20px;
+    transition:.2s;
+}
+
+.card:hover{
+    border-color:#21a961;
+    transform:translateY(-3px);
+}
+
+.card small{
+    color:#36c873;
+    font-size:10px;
+    font-weight:bold;
+}
+
+.card h3{
+    font-size:16px;
+    margin:7px 0;
+}
+
+.card p{
+    color:#8fa398;
     font-size:12px;
 }
 
-/* TABLE */
+/* ================= TEAMS ================= */
+
+.team-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+}
+
+.team-card{
+    text-align:center;
+    background:#0a1710;
+    border:1px solid #19472f;
+    border-radius:10px;
+    padding:22px 12px;
+    transition:.2s;
+}
+
+.team-card:hover{
+    border-color:#21aa62;
+    transform:translateY(-3px);
+}
+
+.team-icon{
+    width:64px;
+    height:64px;
+    margin:0 auto 12px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#0d4e2f;
+    font-size:28px;
+}
+
+/* ================= VIDEOS ================= */
+
+.video-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:16px;
+}
+
+.video-card{
+    min-height:190px;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+    background:
+    linear-gradient(180deg,transparent,#07120c),
+    #10291b;
+}
+
+.play{
+    font-size:32px;
+    margin-bottom:7px;
+}
+
+/* ================= TABLE ================= */
 
 .table-wrap{
     overflow-x:auto;
-    background:#0b1711;
-    border:1px solid #183b29;
+    background:#0a1710;
+    border:1px solid #19472f;
     border-radius:10px;
 }
 
 table{
     width:100%;
-    border-collapse:collapse;
     min-width:600px;
+    border-collapse:collapse;
 }
 
 th,td{
     padding:14px 16px;
     text-align:left;
-    border-bottom:1px solid #173626;
-    font-size:13px;
+    border-bottom:1px solid #183827;
+    font-size:12px;
 }
 
 th{
-    background:#0e2518;
-    color:#8fd5aa;
+    background:#0d2418;
+    color:#8bd3a6;
 }
 
 td{
-    color:#c3d0c8;
+    color:#bdccc3;
 }
 
 tr:last-child td{
     border-bottom:0;
 }
 
-/* TEAMS */
-
-.team-grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:14px;
-}
-
-.team-card{
-    background:#0b1711;
-    border:1px solid #183b29;
-    border-radius:10px;
-    padding:22px;
-    text-align:center;
-}
-
-.team-icon{
-    width:65px;
-    height:65px;
-    margin:auto;
-    border-radius:50%;
-    background:#0d5130;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:28px;
-    margin-bottom:12px;
-}
-
-/* VIDEO */
-
-.video-card{
-    min-height:180px;
-    display:flex;
-    flex-direction:column;
-    justify-content:end;
-    background:
-    linear-gradient(180deg,transparent,#07110d),
-    #10251a;
-}
-
-.play{
-    font-size:34px;
-    margin-bottom:8px;
-}
-
-/* FOOTER */
+/* ================= FOOTER ================= */
 
 .footer{
-    background:#040806;
-    border-top:1px solid #173c29;
+    background:#030805;
+    border-top:1px solid #173d29;
     padding:35px 0;
-    margin-top:20px;
 }
 
 .footer-inner{
@@ -398,65 +492,136 @@ tr:last-child td{
     flex-wrap:wrap;
 }
 
-.footer p{
-    color:#738b7d;
-    font-size:13px;
-}
-
 .footer strong{
-    color:#20b866;
+    color:#20bd68;
 }
 
-/* RESPONSIVE */
+.footer p{
+    color:#6f8779;
+    font-size:11px;
+}
 
-@media(max-width:950px){
+/* ================= MOBILE ================= */
+
+.mobile-menu{
+    display:none;
+    border:1px solid #24563b;
+    background:#0b1b12;
+    color:#fff;
+    padding:8px 11px;
+    border-radius:6px;
+    cursor:pointer;
+}
+
+@media(max-width:1000px){
 
     .header-inner{
-        flex-direction:column;
-        padding:15px 0;
+        flex-wrap:wrap;
+        padding:13px 0;
     }
 
     .nav{
+        width:100%;
         justify-content:center;
+        flex-wrap:wrap;
     }
 
-    .grid,
     .score-grid{
         grid-template-columns:1fr 1fr;
     }
 
-    .team-grid{
+    .news-grid{
         grid-template-columns:1fr 1fr;
     }
 
-    .hero h2{
-        font-size:38px;
+    .news-card:first-child{
+        grid-column:span 2;
+    }
+
+    .team-grid{
+        grid-template-columns:1fr 1fr;
     }
 }
 
-@media(max-width:600px){
+@media(max-width:650px){
 
-    .grid,
+    .container{
+        width:90%;
+    }
+
+    .header-inner{
+        min-height:68px;
+    }
+
+    .brand h1{
+        font-size:18px;
+    }
+
+    .nav{
+        display:none;
+    }
+
+    .mobile-menu{
+        display:block;
+    }
+
+    .header-inner.menu-open .nav{
+        display:flex;
+        flex-direction:column;
+        align-items:stretch;
+        width:100%;
+        padding:8px 0 5px;
+    }
+
+    .nav a{
+        text-align:center;
+        padding:9px;
+    }
+
+    .hero{
+        min-height:390px;
+    }
+
+    .hero-content{
+        padding:55px 0;
+    }
+
+    .hero h2{
+        font-size:37px;
+    }
+
+    .hero p{
+        font-size:13px;
+    }
+
+    .hero-buttons{
+        flex-direction:column;
+        max-width:230px;
+    }
+
     .score-grid,
+    .grid,
+    .news-grid,
+    .video-grid,
     .team-grid{
         grid-template-columns:1fr;
     }
 
-    .hero-inner{
-        padding:45px 0;
+    .news-card:first-child{
+        grid-column:auto;
     }
 
-    .hero h2{
-        font-size:32px;
-    }
-
-    .nav a{
-        font-size:12px;
-        padding:7px 8px;
+    .section-head{
+        align-items:flex-start;
+        flex-direction:column;
     }
 
     section{
-        padding:40px 0;
+        padding:42px 0;
+    }
+
+    .breaking-text{
+        font-size:10px;
     }
 }
 </style>
@@ -468,7 +633,7 @@ tr:last-child td{
 
 <header class="header">
 
-<div class="header-inner">
+<div class="container header-inner" id="headerInner">
 
 <a href="#" class="brand">
 
@@ -480,6 +645,8 @@ tr:last-child td{
 </div>
 
 </a>
+
+<button class="mobile-menu" onclick="toggleMenu()">☰ Menu</button>
 
 <nav class="nav">
 
@@ -500,15 +667,26 @@ tr:last-child td{
 </header>
 
 
+<!-- BREAKING NEWS -->
+
+<div class="breaking-bar">
+
+<div class="breaking-label">🔴 BREAKING</div>
+
+<div class="breaking-text">
+Pakistan cricket latest updates • Match news • Live scores • Cricket updates • Razaullah Fan's
+</div>
+
+</div>
+
+
 <!-- HERO -->
 
 <section class="hero">
 
-<div class="container hero-inner">
+<div class="container hero-content">
 
-<div class="hero-content">
-
-<div class="badge">🏏 RAZAULLAH FAN'S CRICKET</div>
+<div class="hero-badge">🏏 RAZAULLAH FAN'S CRICKET</div>
 
 <h2>
 Everything Cricket.<br>
@@ -516,22 +694,19 @@ Everything Cricket.<br>
 </h2>
 
 <p>
-Latest cricket news, live scores, upcoming matches,
-series, teams, rankings, videos and much more.
-Welcome to the Razaullah Fan's cricket community.
+Your destination for cricket scores, schedules, news,
+series, teams, rankings, videos and the latest cricket updates.
 </p>
 
 <div class="hero-buttons">
 
-<a class="btn btn-primary" href="#scores">
+<a href="#scores" class="btn btn-primary">
 View Live Scores
 </a>
 
-<a class="btn btn-secondary" href="#news">
+<a href="#news" class="btn btn-secondary">
 Latest News
 </a>
-
-</div>
 
 </div>
 
@@ -561,7 +736,7 @@ Latest News
 
 <div class="score-card">
 
-<div class="score-top">
+<div class="score-head">
 <span>PAK vs IND</span>
 <span class="live">● LIVE</span>
 </div>
@@ -570,15 +745,15 @@ Latest News
 
 <div class="team">
 <span>🇵🇰 Pakistan</span>
-<span>156/6</span>
+<span class="score">156/6</span>
 </div>
 
 <div class="team">
 <span>🇮🇳 India</span>
-<span>148/8</span>
+<span class="score">148/8</span>
 </div>
 
-<div class="result">
+<div class="score-result">
 Pakistan need 0 runs to win
 </div>
 
@@ -589,7 +764,7 @@ Pakistan need 0 runs to win
 
 <div class="score-card">
 
-<div class="score-top">
+<div class="score-head">
 <span>ENG vs AUS</span>
 <span class="live">● LIVE</span>
 </div>
@@ -598,15 +773,15 @@ Pakistan need 0 runs to win
 
 <div class="team">
 <span>🏴 England</span>
-<span>187/4</span>
+<span class="score">187/4</span>
 </div>
 
 <div class="team">
 <span>🇦🇺 Australia</span>
-<span>181/7</span>
+<span class="score">181/7</span>
 </div>
 
-<div class="result">
+<div class="score-result">
 England won by 6 runs
 </div>
 
@@ -617,28 +792,98 @@ England won by 6 runs
 
 <div class="score-card">
 
-<div class="score-top">
+<div class="score-head">
 <span>SA vs NZ</span>
-<span>● COMPLETED</span>
+<span>COMPLETED</span>
 </div>
 
 <div class="score-body">
 
 <div class="team">
 <span>🇿🇦 South Africa</span>
-<span>201/7</span>
+<span class="score">201/7</span>
 </div>
 
 <div class="team">
 <span>🇳🇿 New Zealand</span>
-<span>190/9</span>
+<span class="score">190/9</span>
 </div>
 
-<div class="result">
+<div class="score-result">
 South Africa won by 11 runs
 </div>
 
 </div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- NEWS -->
+
+<section id="news">
+
+<div class="container">
+
+<div class="section-head">
+
+<div>
+<h2>Latest Cricket News</h2>
+<div class="section-line"></div>
+</div>
+
+<p>Stay updated</p>
+
+</div>
+
+<div class="news-grid">
+
+<div class="news-card">
+
+<div class="news-tag">PAKISTAN CRICKET</div>
+
+<h3>
+Pakistan prepare for another major cricket battle
+</h3>
+
+<p>
+Latest team updates, match developments and cricket news.
+</p>
+
+</div>
+
+
+<div class="news-card">
+
+<div class="news-tag">MATCH NEWS</div>
+
+<h3>
+Big match action continues
+</h3>
+
+<p>
+Follow the latest cricket developments.
+</p>
+
+</div>
+
+
+<div class="news-card">
+
+<div class="news-tag">WORLD CRICKET</div>
+
+<h3>
+International cricket updates
+</h3>
+
+<p>
+News from the world of cricket.
+</p>
 
 </div>
 
@@ -658,7 +903,7 @@ South Africa won by 11 runs
 <div class="section-head">
 
 <div>
-<h2>Schedule</h2>
+<h2>Upcoming Schedule</h2>
 <div class="section-line"></div>
 </div>
 
@@ -693,50 +938,6 @@ South Africa won by 11 runs
 </section>
 
 
-<!-- NEWS -->
-
-<section id="news">
-
-<div class="container">
-
-<div class="section-head">
-
-<div>
-<h2>Latest Cricket News</h2>
-<div class="section-line"></div>
-</div>
-
-<p>Stay updated</p>
-
-</div>
-
-<div class="grid">
-
-<div class="card">
-<small>CRICKET NEWS</small>
-<h3>Pakistan prepare for another big cricket battle</h3>
-<p>Get the latest updates, team news and match developments.</p>
-</div>
-
-<div class="card">
-<small>PAKISTAN CRICKET</small>
-<h3>Pakistan squad continues preparations</h3>
-<p>Players are working hard ahead of the upcoming matches.</p>
-</div>
-
-<div class="card">
-<small>WORLD CRICKET</small>
-<h3>International cricket action continues</h3>
-<p>Follow major cricket events from around the world.</p>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
 <!-- SERIES -->
 
 <section id="series">
@@ -746,7 +947,7 @@ South Africa won by 11 runs
 <div class="section-head">
 
 <div>
-<h2>Series</h2>
+<h2>Featured Series</h2>
 <div class="section-line"></div>
 </div>
 
@@ -790,11 +991,11 @@ South Africa won by 11 runs
 <div class="section-head">
 
 <div>
-<h2>Teams</h2>
+<h2>Top Teams</h2>
 <div class="section-line"></div>
 </div>
 
-<p>International teams</p>
+<p>International cricket</p>
 
 </div>
 
@@ -844,15 +1045,15 @@ South Africa won by 11 runs
 <div class="section-line"></div>
 </div>
 
-<p>Watch latest videos</p>
+<p>Watch cricket videos</p>
 
 </div>
 
-<div class="grid">
+<div class="video-grid">
 
 <div class="card video-card">
 <div class="play">▶</div>
-<small>HIGHLIGHTS</small>
+<small>MATCH HIGHLIGHTS</small>
 <h3>Pakistan Match Highlights</h3>
 </div>
 
@@ -865,7 +1066,7 @@ South Africa won by 11 runs
 <div class="card video-card">
 <div class="play">▶</div>
 <small>INTERVIEWS</small>
-<h3>Cricket Interviews</h3>
+<h3>Latest Cricket Interviews</h3>
 </div>
 
 </div>
@@ -884,7 +1085,7 @@ South Africa won by 11 runs
 <div class="section-head">
 
 <div>
-<h2>ICC Rankings</h2>
+<h2>Team Rankings</h2>
 <div class="section-line"></div>
 </div>
 
@@ -1022,12 +1223,12 @@ South Africa won by 11 runs
 </div>
 
 <div class="card">
-<h3>📸 Gallery</h3>
+<h3>📸 Cricket Gallery</h3>
 <p>Cricket photos and memorable moments.</p>
 </div>
 
 <div class="card">
-<h3>📊 Stats</h3>
+<h3>📊 Cricket Stats</h3>
 <p>Player and team statistics.</p>
 </div>
 
@@ -1050,12 +1251,23 @@ South Africa won by 11 runs
 </div>
 
 <div>
-<p>© 2026 Razaullah Fan's. All Rights Reserved.</p>
+<p>© 2026 Razaullah Fan's • All Rights Reserved</p>
 </div>
 
 </div>
 
 </footer>
+
+
+<script>
+function toggleMenu(){
+
+    const header = document.getElementById("headerInner");
+
+    header.classList.toggle("menu-open");
+
+}
+</script>
 
 </body>
 </html>
