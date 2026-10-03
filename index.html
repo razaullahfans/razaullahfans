@@ -1,1 +1,183 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>Razaullah Fan's | Cricket Portal</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #070b0a;
+    color: #ffffff;
+}
+
+/* HEADER */
+header {
+    background: #0b120f;
+    border-bottom: 1px solid #193d2b;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.top {
+    max-width: 1250px;
+    margin: auto;
+    min-height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-icon {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: #18a558;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 23px;
+}
+
+.logo h1 {
+    font-size: 22px;
+    letter-spacing: 1px;
+}
+
+.logo span {
+    color: #20c878;
+}
+
+/* NAVIGATION */
+nav {
+    background: #101814;
+    border-top: 1px solid #14251d;
+}
+
+.navbar {
+    max-width: 1250px;
+    margin: auto;
+    display: flex;
+    overflow-x: auto;
+}
+
+.navbar a {
+    color: #d7ddd9;
+    text-decoration: none;
+    padding: 16px 18px;
+    white-space: nowrap;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    background: #18a558;
+    color: white;
+}
+
+/* HERO */
+.hero {
+    min-height: 360px;
+    background:
+        linear-gradient(90deg, rgba(0,0,0,.9), rgba(0,40,25,.55)),
+        radial-gradient(circle at right, #146b3a, #07100c 55%);
+    display: flex;
+    align-items: center;
+}
+
+.hero-content {
+    max-width: 1250px;
+    width: 100%;
+    margin: auto;
+    padding: 60px 20px;
+}
+
+.hero h2 {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+.hero h2 span {
+    color: #20c878;
+}
+
+.hero p {
+    color: #b8c4bd;
+    max-width: 600px;
+    line-height: 1.7;
+    font-size: 17px;
+}
+
+.hero-buttons {
+    margin-top: 25px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 13px 22px;
+    border-radius: 7px;
+    text-decoration: none;
+    margin-right: 8px;
+    font-weight: bold;
+}
+
+.btn-green {
+    background: #18a558;
+    color: white;
+}
+
+.btn-dark {
+    background: #17221d;
+    color: white;
+    border: 1px solid #28523c;
+}
+
+/* MAIN */
+.container {
+    max-width: 1250px;
+    margin: auto;
+    padding: 35px 20px;
+}
+
+.section-title {
+    font-size: 25px;
+    margin-bottom: 20px;
+    border-left: 4px solid #18a558;
+    padding-left: 12px;
+}
+
+/* MATCH CARDS */
+.matches {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.card {
+    background: #101713;
+    border: 1px solid #1b3326;
+    border-radius: 10px;
+    padding: 20px;
+    transition: .3s;
+}
+
+.card:hover {
+    transform: translateY(-4
