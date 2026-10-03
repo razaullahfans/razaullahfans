@@ -2,182 +2,423 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Razaullah Fan's | Cricket Portal</title>
+    <title>Razaullah Fan's | Cricket</title>
 
-<style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: #070b0a;
-    color: #ffffff;
-}
+        body {
+            font-family: Arial, sans-serif;
+            background: #070b09;
+            color: white;
+        }
 
-/* HEADER */
-header {
-    background: #0b120f;
-    border-bottom: 1px solid #193d2b;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
+        /* TOP HEADER */
+        .header {
+            background: #0b1510;
+            border-bottom: 1px solid #1d3d2b;
+        }
 
-.top {
-    max-width: 1250px;
-    margin: auto;
-    min-height: 75px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 20px;
-}
+        .header-inner {
+            max-width: 1200px;
+            margin: auto;
+            padding: 18px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
 
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
 
-.logo-icon {
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    background: #18a558;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 23px;
-}
+        .brand-logo {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: #16a05a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 25px;
+        }
 
-.logo h1 {
-    font-size: 22px;
-    letter-spacing: 1px;
-}
+        .brand h1 {
+            font-size: 22px;
+        }
 
-.logo span {
-    color: #20c878;
-}
+        .brand h1 span {
+            color: #20c878;
+        }
 
-/* NAVIGATION */
-nav {
-    background: #101814;
-    border-top: 1px solid #14251d;
-}
+        .tagline {
+            color: #8fa198;
+            font-size: 12px;
+        }
 
-.navbar {
-    max-width: 1250px;
-    margin: auto;
-    display: flex;
-    overflow-x: auto;
-}
+        /* NAVIGATION */
+        .navigation {
+            background: #101a14;
+            border-bottom: 1px solid #1d3d2b;
+            overflow-x: auto;
+        }
 
-.navbar a {
-    color: #d7ddd9;
-    text-decoration: none;
-    padding: 16px 18px;
-    white-space: nowrap;
-    font-size: 14px;
-    transition: 0.3s;
-}
+        .nav-inner {
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+        }
 
-.navbar a:hover,
-.navbar a.active {
-    background: #18a558;
-    color: white;
-}
+        .nav-inner a {
+            color: #d8dfda;
+            text-decoration: none;
+            padding: 16px 17px;
+            font-size: 14px;
+            white-space: nowrap;
+        }
 
-/* HERO */
-.hero {
-    min-height: 360px;
-    background:
-        linear-gradient(90deg, rgba(0,0,0,.9), rgba(0,40,25,.55)),
-        radial-gradient(circle at right, #146b3a, #07100c 55%);
-    display: flex;
-    align-items: center;
-}
+        .nav-inner a:hover,
+        .nav-inner a.active {
+            background: #16a05a;
+            color: white;
+        }
 
-.hero-content {
-    max-width: 1250px;
-    width: 100%;
-    margin: auto;
-    padding: 60px 20px;
-}
+        /* HERO */
+        .hero {
+            background:
+                linear-gradient(90deg, #050806, rgba(5, 30, 18, .85)),
+                radial-gradient(circle at right, #176b3c, #07100b 65%);
 
-.hero h2 {
-    font-size: 48px;
-    margin-bottom: 15px;
-}
+            min-height: 390px;
+            display: flex;
+            align-items: center;
+        }
 
-.hero h2 span {
-    color: #20c878;
-}
+        .hero-inner {
+            max-width: 1200px;
+            width: 100%;
+            margin: auto;
+            padding: 70px 20px;
+        }
 
-.hero p {
-    color: #b8c4bd;
-    max-width: 600px;
-    line-height: 1.7;
-    font-size: 17px;
-}
+        .hero small {
+            color: #20c878;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
 
-.hero-buttons {
-    margin-top: 25px;
-}
+        .hero h2 {
+            font-size: 50px;
+            max-width: 700px;
+            margin: 14px 0;
+        }
 
-.btn {
-    display: inline-block;
-    padding: 13px 22px;
-    border-radius: 7px;
-    text-decoration: none;
-    margin-right: 8px;
-    font-weight: bold;
-}
+        .hero h2 span {
+            color: #20c878;
+        }
 
-.btn-green {
-    background: #18a558;
-    color: white;
-}
+        .hero p {
+            max-width: 620px;
+            color: #b8c4bd;
+            font-size: 17px;
+            line-height: 1.7;
+        }
 
-.btn-dark {
-    background: #17221d;
-    color: white;
-    border: 1px solid #28523c;
-}
+        .buttons {
+            margin-top: 25px;
+        }
 
-/* MAIN */
-.container {
-    max-width: 1250px;
-    margin: auto;
-    padding: 35px 20px;
-}
+        .button {
+            display: inline-block;
+            text-decoration: none;
+            padding: 13px 22px;
+            border-radius: 6px;
+            margin-right: 8px;
+            font-weight: bold;
+        }
 
-.section-title {
-    font-size: 25px;
-    margin-bottom: 20px;
-    border-left: 4px solid #18a558;
-    padding-left: 12px;
-}
+        .green-button {
+            background: #16a05a;
+            color: white;
+        }
 
-/* MATCH CARDS */
-.matches {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 18px;
-}
+        .dark-button {
+            background: #101a14;
+            color: white;
+            border: 1px solid #2a4c38;
+        }
 
-.card {
-    background: #101713;
-    border: 1px solid #1b3326;
-    border-radius: 10px;
-    padding: 20px;
-    transition: .3s;
-}
+        /* GENERAL */
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 40px 20px;
+        }
 
-.card:hover {
-    transform: translateY(-4
+        .title {
+            font-size: 25px;
+            margin-bottom: 22px;
+            border-left: 4px solid #16a05a;
+            padding-left: 12px;
+        }
+
+        /* LIVE MATCHES */
+        .match-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .match-card {
+            background: #101713;
+            border: 1px solid #1d3829;
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        .live {
+            color: #ff5252;
+            font-weight: bold;
+            font-size: 13px;
+            margin-bottom: 18px;
+        }
+
+        .team {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #1c2b22;
+        }
+
+        .score {
+            color: #20c878;
+            font-weight: bold;
+        }
+
+        .match-status {
+            color: #89978f;
+            font-size: 13px;
+            margin-top: 15px;
+        }
+
+        /* NEWS */
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .news-card {
+            background: #101713;
+            border: 1px solid #1d3829;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .news-photo {
+            height: 160px;
+            background: linear-gradient(135deg, #145b35, #07100b);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 55px;
+        }
+
+        .news-content {
+            padding: 18px;
+        }
+
+        .news-content h3 {
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .news-content p {
+            color: #9aa69f;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* LISTS */
+        .list-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .list-card {
+            background: #101713;
+            border: 1px solid #1d3829;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .list-row {
+            padding: 17px;
+            border-bottom: 1px solid #1d2a22;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .list-row:last-child {
+            border-bottom: none;
+        }
+
+        .green-text {
+            color: #20c878;
+        }
+
+        /* TEAMS */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        .team-box {
+            background: #101713;
+            border: 1px solid #1d3829;
+            border-radius: 10px;
+            padding: 25px 15px;
+            text-align: center;
+        }
+
+        .team-box .flag {
+            font-size: 40px;
+            margin-bottom: 12px;
+        }
+
+        .team-box p {
+            color: #89978f;
+            font-size: 13px;
+            margin-top: 6px;
+        }
+
+        /* VIDEO */
+        .video-box {
+            background: #101713;
+            border: 1px solid #1d3829;
+            border-radius: 10px;
+            padding: 25px;
+            text-align: center;
+        }
+
+        .play {
+            width: 70px;
+            height: 70px;
+            background: #16a05a;
+            border-radius: 50%;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+        }
+
+        .video-box h3 {
+            margin-top: 15px;
+        }
+
+        .video-box p {
+            color: #89978f;
+            margin-top: 8px;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #040705;
+            border-top: 1px solid #1d3d2b;
+            margin-top: 30px;
+        }
+
+        .footer-inner {
+            max-width: 1200px;
+            margin: auto;
+            padding: 35px 20px;
+            text-align: center;
+        }
+
+        .footer-inner h2 {
+            margin-bottom: 10px;
+        }
+
+        .footer-inner span {
+            color: #20c878;
+        }
+
+        .footer-inner p {
+            color: #78857d;
+            margin-top: 10px;
+        }
+
+        /* MOBILE */
+        @media (max-width: 800px) {
+
+            .hero h2 {
+                font-size: 35px;
+            }
+
+            .match-grid,
+            .news-grid,
+            .list-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .team-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .tagline {
+                display: none;
+            }
+        }
+
+        @media (max-width: 500px) {
+
+            .brand h1 {
+                font-size: 18px;
+            }
+
+            .hero {
+                min-height: 330px;
+            }
+
+            .hero-inner {
+                padding: 50px 20px;
+            }
+
+            .team-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header class="header">
+
+    <div class="header-inner">
+
+        <div class="brand">
+
+            <div class="brand-logo">
+                🏏
+            </div>
+
+            <div>
+                <h1>Razaullah <span>Fan's</span></h1>
+                <div class="tagline">
+                    Your Cricket Community
+                </div
